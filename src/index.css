@@ -123,6 +123,20 @@ select{
       max-width: 80rem;
   }
 
+  .grid-container {
+    display: grid;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
+}
+
+  .grid-container > *:first-child{
+      grid-column: 2;
+      
+  }
+  .grid-container > *:last-child {
+    grid-column: 3;
+}
+
   .sr-only {
     position: absolute;
     width: 1px;
@@ -210,7 +224,7 @@ select{
 .large-button{
     position: relative;
     z-index: 1;
-    display: grid;
+    display: inline-grid;
     place-items: center;
     /* padding: 0 2em; */
     border-radius: 50%;
